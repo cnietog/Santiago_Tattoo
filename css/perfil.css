@@ -142,3 +142,22 @@
     position: relative;
     z-index: 50;
 }
+
+/* SECCION FOOTER  */
+/*FOOTER ICONOS REDES SOCIALES*/
+
+.footer-iconos .social .fa-brands{
+    color: #8f0408;
+    padding-left: 25px;
+
+}
+.footer-iconos .social .social__enlace i{
+scale: 1.8;
+}
+
+label.error{
+    color: red;
+    font-size: 0.8em;
+    width: 200px;
+    top: 1px;
+   }
