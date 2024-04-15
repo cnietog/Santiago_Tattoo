@@ -1,0 +1,1463 @@
+/* CARACTERISTICAS GLOBALES */
+:root{
+    --dark-primary : #7B1FA2;
+    --primary : #9C27B0;
+    --light-primary : #E1BEE7;
+    --text-icon : #FFFFFF;
+    --accent : #00BCD4;
+    --primary-text : #212121;
+    --secondary-text : #757575;
+    --divider: #BDBDBD;
+
+
+    /* Calendario */
+    --dark-body__cal: #4d4c5a;
+    --dark-main__cal: #141529;
+    --dark-second__cal: #79788c;
+    --dark-hover__cal: #323048;
+    --dark-text__cal: #f8fbff;
+
+    --light-body__cal: #f3f8fe;
+    --light-main__cal: #fdfdfd;
+    --light-second__cal: #c3c2c8;
+    --light-hover__cal: #edf0f5;
+    --light-text__cal: #151426;
+
+    --blue: var(--primary);
+    --white: #fff;
+
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+/*Fuente para titulo - PATITAS SOLAMENTE*/
+@font-face {
+    font-family: 'Playfair_Display';
+    src: url('../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf');
+}
+
+/*Fuente para subtitulo*/
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald/Oswald-VariableFont_wght.ttf');
+}
+
+/*Fuente para texto*/
+@font-face {
+    font-family: 'Merriweather';
+    src: url('../fonts/Merriweather/Merriweather-Black.ttf');
+}
+
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    /* border: solid 2px red; */
+}
+
+  /*=========================================================================================================*/
+  
+  
+  
+/*=========================================================================================================*/
+
+
+
+/* MARGEN ARRIBA Y ABAJO */
+.altura__a-b{
+    padding: 100px 0;
+}
+
+
+/* SECCION PARALLAX */
+
+.parallax {
+    background-image: url('../img/Imagen_top/Tattoo_parallax.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 50;
+  }
+  
+  .parallax-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .parallax-text h1 {
+    font-size: 3rem;
+
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .parallax-text p {
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px #000;
+    transition: all 0.3s ease-in-out;
+  }
+
+
+/* ================================================== */
+
+/* INTRO IMAGEN */
+.intro{
+    min-height: 100vh;
+    padding: 0 5%;
+    padding-top: 12.5rem;
+    padding-bottom: 2rem;
+}
+
+
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/Banner_top/BANNER_INTRO/fondo_2.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+/* IMAGEN PERRO-GATO MOVIMIENTO */
+.intro .image img{
+    margin-top: -1rem;
+    display: flex;
+    height: auto;
+    width: 2rem;
+    align-items: center;
+    margin-left: -1rem;
+    animation: float 2.5s linear infinite;
+}
+/* ================================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*==========  NAVBAR  ===============*/
+  /* CONFIGURACION DE NAVBAR */
+.navbar{
+    /* background-color: var(--dark-main__cal) !important; */
+    width: 100%;
+
+}
+
+
+/*------------ LOGO ----------*/
+.navbar .container-fluid img{
+    width: 4rem;
+    height: auto;
+    margin-right: 6rem;
+    margin-left: 2rem;
+}
+
+
+/*------------ TEXTO-LINK ----------*/
+#navbarSupportedContent .navbar-nav .nav-item a{
+    color: var(--text-icon);
+    font-size: 22px;
+    margin-left: 2.5rem;
+    text-transform: uppercase;
+    
+}
+
+
+
+/*------------ TEXT-DROPMENU ----------*/
+#navbarSupportedContent .navbar-nav .nav-item .dropdown-menu .dropdown-item{
+    color: var(--primary-text);
+    font-family: 'roboto';
+    font-size: 22px;
+    margin-left: 2rem;
+    text-transform: uppercase;
+    
+}
+  #barraNav{
+    background-color: var(--dark-azulado);
+}
+  .navbar .navbar-brand img{
+    width: 60px;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -90px;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
+/* ICONOS PORQUE ELEJIRNOS*/
+#iconos{
+    height:600px;
+}
+/*--------------------------------------------------------------
+# Seccion por que elegirnos?
+--------------------------------------------------------------*/
+.why-us .why-box {
+    padding: 30px;
+    background: var(--primary);
+    color: var(--text-icon)
+  }
+  
+  .why-us .why-box h3 {
+    font-weight: 700;
+    font-size: 34px;
+    margin-bottom: 30px;
+    font-family: 'roboto';
+  }
+  
+  .why-us .why-box p {
+    margin-bottom: 30px;
+  }
+  
+  /* boton - hover */
+ 
+  
+  .why-us .icon-box {
+    text-align: center;
+    background: var(--light-primary);
+    padding: 30px 30px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(55, 55, 63, 0.1);
+    transition: 0.3s;
+  }
+  
+  .why-us .icon-box i {
+    color: var(--accent);
+    margin-bottom: 30px;
+    font-size: 42px;
+    margin-bottom: 30px;
+    background: var(--primary-text);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 94px;
+    height: 94px;
+  }
+  
+  .why-us .icon-box h4 {
+    font-size: 30px;
+    font-weight: 500;
+    margin: 0 0 30px 0;
+    font-family: 'roboto';
+    color: var(--accent);
+  }
+  
+  .why-us .icon-box p {
+    font-family: 'roboto';
+    font-size: 20px;
+    color: var(--primary-text);
+  }
+  
+  @media (min-width: 1200px) {
+    .why-us .icon-box:hover {
+      transform: scale(1.1);
+    }
+  }
+  
+/* ================================================== */
+
+/* FUNDACION */
+.hero{
+    background-color: var(--primary);
+}
+.hero .text-santuario h2{
+    color: var(--text-icon);
+}
+.hero .text-santuario .pFundacion{
+    color: #000;
+}
+.botones__fundacion a{
+    color: var(--dark-text__cal);
+}
+/* BOTON */
+#btn__donar{
+    position: relative;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background: var(--primary-text);
+    color: var(--accent);
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+    border-radius: 25px;
+}
+#btn__donar:hover{
+   color: #FFFFFF;
+   scale: 1.1;
+}
+#btn__donar span{
+    position: absolute;
+    background: #fff;
+    transition: .5s;
+}
+#btn__donar span:nth-child(1){
+    width: 100%;
+    height: 1px;
+    top: 0;
+    left: -100%;
+}
+#btn__donar span:nth-child(2){
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    right: -100%;
+}
+
+#btn__donar span:nth-child(3){
+    width: 1px;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+}
+#btn__donar span:nth-child(4){
+    width: 1px;
+    height: 100%;
+    top: -100%;
+    right: 0;
+}
+
+#btn__donar:hover span:nth-child(1){
+    left: 0;
+}
+
+#btn__donar:hover span:nth-child(2){
+    right: 0;
+}
+
+#btn__donar:hover span:nth-child(3){
+    bottom: 0;
+}
+
+#btn__donar:hover span:nth-child(4){
+    top: 0;
+}
+
+/*--------------------------------------------------------------
+# video fundacion
+--------------------------------------------------------------*/
+/* titulo video */
+#text_video_titulo{
+    font-family: 'roboto';
+    text-align: center;
+    font-size: 40pt;
+
+}
+#span_video_titulo{
+    font-family: 'PawWowBlock-VGMDl';
+    color: var(--dark-primary);
+    text-align: center;
+    font-size: 50pt;
+
+}
+
+.banner-video {
+    background-color: var(--text-icon);   
+  }
+  
+  .banner-video .container-boton-video {
+    background-image: url("../img/video/imgen_video.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+  }
+  
+  .banner-video img {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .video-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Agrega aquí estilos adicionales si es necesario */
+  }
+  
+  
+
+/* ================================================== */
+
+
+/* MARCAS */
+
+.marcas h2{
+    color: var(--dark-primary);
+}
+.marcas p{
+    color: var(--primary-text);
+}
+
+
+/* ================================================== */
+/* JUEGO DEL PERRO */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  canvas {
+    border: 1px solid #000;
+    display: block;
+    margin: 0 auto;
+  }
+  
+
+
+/*--------------------------------------------------------------
+# Gallery Section
+--------------------------------------------------------------*/
+#breed-info{
+    background-color: var(--primary);
+}
+  
+/* ERES UN DOG LOVER */
+
+#imagen-perro-seleccionado{
+    border-radius: 20px;
+}
+
+.section-apiDogs h2{
+    color: var(--light-body__cal);
+}
+.contenedor__tabla__doglover{
+    background-color: var(--primary-text);
+    border-radius: 30px;
+    border: #00BCD4 solid 3px;
+
+}
+.contenedor__selector__doglover h4{
+    color: var(--light-main__cal);
+}
+#selector-perros{
+    background-color: var(--accent);
+    border: #00BCD4;
+    opacity: .8;
+}
+.contenedor__tabla__doglover h2{
+    color: var(--text-icon);
+    font-size: 40pt;
+    font-family: 'roboto';
+}
+.section-apiDogs p{
+    font-family: 'roboto';
+    color: var(--primary-text);
+    font-size: 24pt;
+}
+.text__selecciona{
+    font-family: 'roboto';
+    color: var(--dark-text__cal);
+    font-size: 16pt;
+}
+
+/* ================================================== */
+/* API CAT */
+
+
+/* ------------------------------------------------------------ */
+
+/* flecha animada */
+.flecha__animada{
+    margin-left: 5px;
+    transform: rotate(90deg);
+    scale: 1.3;
+}
+.section-apiDogs .text__reserva{
+    color: var(--accent);
+}
+.section-apiDogs .text__patitas{
+    color: var(--accent);
+    font-family: 'PawWowBlock-VGMDl';
+    font-size: 28pt;
+}
+table {
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid black;
+    padding: 5px;
+  }
+/* CALENDARIO */
+.dark{
+    --bg-body:var(--dark-body__cal);
+    --bg-main:var(--dark-main__cal);
+    --bg-second:var(--dark-second__cal);
+    --color-hover: var(--dark-hover__cal);
+    --color-txt: var(--dark-text__cal);
+}
+
+.light{
+    --bg-body:var(--light-body__cal);
+    --bg-main:var(--light-main__cal);
+    --bg-second:var(--light-second__cal);
+    --color-hover: var(--light-hover__cal);
+    --color-txt: var(--light-text__cal);
+}
+.boton__Modal-calendario{
+    background-color: #7B1FA2 !important;    
+}
+.content__calendar{
+    height: 40vh;
+    display: grid;
+    place-items: center;
+    font-family: 'roboto';
+    background-color: var(--bg-body);
+}
+.calendar {
+    height: 350px;
+    width: 350px;
+    background-color: var(--bg-main);
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.light .calendar {
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--color-txt);
+    padding: 10px;
+}
+
+.calendar-body {
+    padding: 10px;
+}
+
+.calendar-week-day {
+    height: 30px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 300;
+}
+
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    color: var(--color-txt);
+}
+
+.calendar-days div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    animation: to-top 1s forwards;
+    /* border-radius: 50%; */
+}
+
+.calendar-days div span {
+    position: absolute;
+}
+
+.calendar-days div:hover span {
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.calendar-days div span:nth-child(1),
+.calendar-days div span:nth-child(3) {
+    width: 2px;
+    height: 0;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div:hover span:nth-child(1),
+.calendar-days div:hover span:nth-child(3) {
+    height: 100%;
+}
+
+.calendar-days div span:nth-child(1) {
+    bottom: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(3) {
+    top: 0;
+    right: 0;
+}
+
+.calendar-days div span:nth-child(2),
+.calendar-days div span:nth-child(4) {
+    width: 0;
+    height: 2px;
+    background-color: var(--color-txt);
+}
+
+.calendar-days div:hover span:nth-child(2),
+.calendar-days div:hover span:nth-child(4) {
+    width: 100%;
+}
+
+.calendar-days div span:nth-child(2) {
+    top: 0;
+    left: 0;
+}
+
+.calendar-days div span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+
+.calendar-days div:hover span:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.calendar-days div:hover span:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.calendar-days div:hover span:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.calendar-days div.curr-date,
+.calendar-days div.curr-date:hover {
+    background-color: var(--blue);
+    color: var(--white);
+    border-radius: 50%;
+}
+
+.calendar-days div.curr-date span {
+    display: none;
+}
+
+.month-picker {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.month-picker:hover {
+    background-color: var(--color-hover);
+}
+
+.year-picker {
+    display: flex;
+    align-items: center;
+}
+
+.year-change {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.year-change:hover {
+    background-color: var(--color-hover);
+}
+
+.calendar-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.toggle {
+    display: flex;
+}
+
+.toggle span {
+    margin-right: 10px;
+    color: var(--color-txt);
+}
+
+.dark-mode-switch {
+    position: relative;
+    width: 48px;
+    height: 25px;
+    border-radius: 14px;
+    background-color: var(--bg-second);
+    cursor: pointer;
+}
+
+.dark-mode-switch-ident {
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: var(--bg-main);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.2s ease-in-out;
+}
+
+.dark .dark-mode-switch .dark-mode-switch-ident {
+    top: 2px;
+    left: calc(2px + 50%);
+}
+
+.month-list {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-main);
+    padding: 20px;
+    grid-template-columns: repeat(3, auto);
+    gap: 5px;
+    display: grid;
+    transform: scale(1.5);
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.month-list.show {
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: visible;
+    transition: all 0.2s ease-in-out;
+}
+
+.month-list > div {
+    display: grid;
+    place-items: center;
+}
+
+.month-list > div > div {
+    width: 100%;
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-txt);
+}
+
+.month-list > div > div:hover {
+    background-color: var(--color-hover);
+}
+
+@keyframes to-top {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+/* ===================================================== */
+
+/* CARRUSEL OFERTAS */
+.carrusel{
+    background-color: var(--dark-primary);
+}
+.carousel-indicators button{
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    padding-left: 30px;
+
+}
+.slide img{
+    height: 65vh ;
+}
+/* ================================================== */
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem)
+    }
+    50%{
+        transform: translateY(-3.5rem);
+    }
+}
+.intro .content{
+    margin-top: -9rem;
+}
+
+.intro .content h3{
+    font-size: 5.5rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.intro .content h3 span{
+    color: var(--primary-text);
+    text-transform: uppercase;
+}
+.intro .content p{
+    font-size: 1.7rem;
+    color: black;
+    padding: 1rem 0;
+}
+
+.intro .content a{
+    margin-left: 13rem;
+}
+
+
+
+
+/* BOTON WHATSAP */
+.container-boton{
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    border-radius: 50%;
+    margin: 0;
+    transition: easy 0.3s;
+    animation: efecto 1.2s infinite;
+    text-align: center;
+    z-index: 999;
+   
+}
+.container-boton:hover{
+    transform: scale(1.1);
+    transform: rotate(360deg);
+    transition: .5s;
+}
+
+.boton-whatsap{
+    width: 90px;
+    transition: ease-in-out 1s;
+}
+
+@keyframes efecto{
+    0%{
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.85);
+    }
+    100%{
+        box-shadow: 0 0 0 25px rgba(0, 0, 0, 0);
+    }
+}
+/* ================================================== */
+
+/*--------------------------------------------------------------
+# Articulos recomendados
+--------------------------------------------------------------*/
+/* CORAZON-EFECTOS */
+.corazon-checkbox {
+    display: none;
+  }
+  
+  .corazon-label {
+    cursor: pointer;
+    font-size: 30px;
+    color: #ccc;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+  
+  .corazon-label:hover {
+    color: red;
+  }
+/* ================================================== */
+
+
+
+/* SECCION FOOTER  */
+/*FOOTER ICONOS REDES SOCIALES*/
+
+.footer-iconos .social .fa-brands{
+    color: #9c27b0;
+    padding-left: 25px;
+
+}
+.footer-iconos .social .social__enlace i{
+scale: 1.8;
+}
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------- */
+/* ------------------------  TELEVISOR  ----------------------------*/
+/* -------------------------------------------------------------- */
+@media screen and (min-width:1024px){
+
+
+   
+
+
+
+   
+    /*==========  LOGO Y TITULO PARALLAX  ===============*/
+    .parallax-text h1 {
+        font-size: 2,5rem;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .parallax-text p {
+        font-size: 2rem;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .parallax:hover .parallax-text h1 {
+        font-size: 6rem;
+        text-shadow: 5px 5px #000;
+        font-family: 'PawWowBlock-VGMDl';
+      }
+      
+      .parallax:hover .parallax-text p {
+        font-size: 4,5rem;
+        text-shadow: 5px 5px #000;
+      }
+
+    /*==========  PERRO Y GATO  ===============*/
+
+    .intro{
+        flex-flow: column-reverse;
+    }
+
+    .intro .image img{
+        width: 100%;
+        justify-content: center;
+        scale: 0.8;
+
+    }
+
+    .intro .content h3{
+        position: relative;
+        font-size: 4rem;
+        font-family: 'PawWowBlock-VGMDl';
+        margin-top: 0rem;
+        margin-left: -3rem;
+        
+    }
+
+    .intro .content p{
+        font-size: 2.5rem;
+    }
+
+    /*SOBRE FUNDACION IGUALDAD*/
+    .hero .text-santuario h2{
+        font-family: 'roboto';
+        text-align: center;
+        font-size: 40pt;
+        text-align: justify;
+        margin-top: 4rem;
+
+    }
+    .hero .text-santuario p{
+        font-family: 'roboto';
+        text-align: center;
+        font-size: 24pt;
+        text-align: justify;
+        
+    }
+    .boton-text-santuario a{
+
+        font-size: 1.3rem;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        transition: all .3s linear;
+        text-decoration: none;
+        text-align: center;   
+    
+    }
+    .hero .img-santuario img{
+        text-align: center;
+        text-align: justify;
+        margin-top: 4rem;
+        border-radius: 2rem;
+
+
+
+    }
+
+
+
+
+/*--------------------------------------------------------------
+# MARCAS
+--------------------------------------------------------------*/
+.marcas .section-header h2{
+    color: var(--primary);
+    font-size: 40pt;
+    font-family: 'roboto';
+}
+.marcas .section-header p{
+    font-family: 'roboto';
+    color: var(--primary-text);
+    font-size: 24pt;
+}
+.marcas .section-header .text__patitas{
+    color: var(--accent);
+    font-family: 'PawWowBlock-VGMDl';
+    font-size: 36pt;
+}
+
+.marcas {
+    background-color: #FFFFFF;
+
+  }
+  
+  .marcas .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .marcas .swiper-pagination .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: var(--text-icon);
+    opacity: 1;
+  }
+  
+  .marcas .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--accent);
+  }
+  
+  .marcas .swiper-slide-active {
+    text-align: center;
+  }
+  
+  @media (min-width: 992px) {
+    .marcas .swiper-wrapper {
+      padding: 40px 0;
+    }
+  
+    .marcas .swiper-slide-active {
+      border: 6px solid var(--accent);
+      padding: 4px;
+      background: #fff;
+      z-index: 1;
+      transform: scale(1.2);
+    }
+  }
+    
+}
+
+
+
+
+
+/* -------------------------------------------------------------- */
+/* ------------------------  TABLET  ----------------------------*/
+/* -------------------------------------------------------------- */
+@media screen and (min-width:600px) and (max-width:1023px){
+     /*==========  NAVBAR  ===============*/
+  #barraNav{
+    background-color: var(--primary);
+}
+  .navbar .navbar-brand img{
+    width: 50px;
+    justify-content: center;
+    top: 50%;
+    transform: translate(390%, 10%);
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+
+    transform: translate(230%, 10%);
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+
+
+    
+}
+/* EFECTO HOVER LINEAS BAJO EL TEXTO NAVBAR */
+/* #navbarSupportedContent .navbar-nav .nav-item a::before,
+#navbarSupportedContent .navbar-nav .nav-item a::after{
+    content: '';
+    border-bottom: 2px solid #00BCD4;
+    position: absolute;
+    transition: 0.3s;
+    opacity: 0;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a::before{
+    bottom: 0px;
+    width: 90%;
+    left: 0;
+    
+
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a::after{
+    bottom: 4px;
+    width: 60%;
+    right: 0px;
+    
+    
+
+}
+#navbarSupportedContent .navbar-nav .nav-item .active::before,
+#navbarSupportedContent .navbar-nav .nav-item a:hover::before{
+    
+    width: 70%;
+    opacity: 1;
+    
+
+}
+#navbarSupportedContent .navbar-nav .nav-item .active::after,
+#navbarSupportedContent .navbar-nav .nav-item a:hover::after{
+    
+    width: 40%;
+    opacity: 1;
+
+} */
+/* ================================================== */
+
+    /*==========  LOGO Y TITULO PARALLAX  ===============*/
+    .parallax-text img{
+        width: 100px;
+        height: auto;
+    }
+    .parallax-text h1 {
+        font-size: 26pt;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .parallax-text p {
+        font-size: 18pt;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /*==========  PERRO Y GATO  ===============*/
+
+    .intro{
+        flex-flow: column-reverse;
+    }
+
+    .intro .image img{
+        
+        margin-left: 15%;
+        width: 60%;
+        justify-content: center;
+
+    }
+
+    .intro .content h3{
+        position: relative;
+        font-size: 32pt;
+        font-family: 'PawWowBlock-VGMDl';
+        margin-top: 0rem;
+        margin-left: -2rem;
+        
+    }
+
+    .intro .content p{
+        font-size: 22pt;
+    }
+
+    /* CARRUSEL OFERTAS */
+
+.slide img{
+    height: 50vh ;
+}
+/* CALENDARIO */
+.calendar{
+    scale: 0.8;
+    top: -4%;
+}
+/* ================================================== */
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------- */
+/* ------------------------  CELULAR  ----------------------------*/
+/* -------------------------------------------------------------- */
+
+@media(max-width:599px){
+
+    .parallax-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      .parallax-text img{
+        width: 100px;
+      }
+
+      .parallax-text h1 {
+        font-size: 1.8rem;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .parallax-text p {
+        font-size: 1rem;
+        color: #fff;
+        text-shadow: 2px 2px #000;
+        transition: all 0.3s ease-in-out;
+      }
+      
+
+
+       /*==========  NAVBAR  ===============*/
+  #barraNav{
+    background-color: var(--primary);
+}
+  .navbar .navbar-brand img{
+    width: 40px;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(100%, 0%);
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 16pt;
+    margin-left: 15px;
+        
+
+}
+.navbar .navbar-brand span{
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 10%);
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 26pt;
+        
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+    
+    font-family: 'roboto';
+    font-size: 16px;
+    position: relative;
+    
+}
+#navbarSupportedContent .navbar-nav .nav-item a:hover{
+    
+    font-family: 'roboto';
+    font-size: 24px;
+    color: var(--accent);
+    font-weight: bold;
+    transition: 0.3s;
+
+    
+}
+
+
+ /*==========  PERRO Y GATO  ===============*/
+
+ .intro{
+    flex-flow: column-reverse;
+}
+
+.intro .image img{
+    margin-left: 10%;
+    width: 80%;
+    justify-content: center;
+
+}
+
+.intro .content h3{
+    position: relative;
+    font-size: 24pt;
+    font-family: 'PawWowBlock-VGMDl';
+    margin-top: 0rem;
+    margin-left: -1rem;
+    
+}
+
+.intro .content p{
+    font-size: 16pt;
+}
+
+/*--------------------------------------------------------------
+# video fundacion
+--------------------------------------------------------------*/
+.banner-video{
+    background-color: var(--text-icon);   
+}
+
+.banner-video .video_cabrita{
+    position: relative;
+    background-image: url("../img/video/imgen_video.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+
+}
+.banner-video img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    
+}
+
+.calendar{
+    /* celular galaxy S9 */
+    scale: 0.6;
+    top: -13%;
+    left: -15%;
+}
+/* ================================================== */
+
+
+    /*FOOTER ICONOS REDES SOCIALES*/
+
+    .footer-iconos .social .fa-brands{
+        color: #9c27b0;
+        padding-left: 10px;
+    
+    }
+    .footer-iconos .social .social__enlace i{
+    scale: 1.5;
+    }
+}

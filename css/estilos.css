@@ -1,0 +1,698 @@
+/* ===AYUDA A VER CUÁNDO TE HAS SALIDO DE LA PANTALLA */
+/* *{
+  border:solid 2px red;
+} */
+
+
+
+/* AGREGO VARIABLES PARA LLAMAR DESDE CLASES */
+:root{
+
+  --dark-primary:#7B1FA2;
+  --primary:#9C27B0;
+  --light-primary:#E1BEE7;
+  --text-icon:#FFFFFF;
+  --accent:#00BCD4;
+  --primary-text:#212121;
+  --secondary-text:#757575;
+  --divider:#BDBDBD;
+}
+
+/* /Fuente para titulo - PATITAS SOLAMENTE/ */
+@font-face {
+    font-family: 'PawWowBlock-VGMDl';
+    src: url('../fonts/AnimalPaw.ttf');
+}
+
+/* /Fuente para subtitulo/ */
+@font-face {
+    font-family: 'InaptlyRegular-rgwxB';
+    src: url('../fonts/InaptlyRegular-rgwxB.ttf');
+}
+
+/* /Fuente para texto/ */
+@font-face {
+    font-family: 'roboto';
+    src: url('href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+}
+
+/* CARGA DE PAGINA  */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: gold;
+
+  -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+  animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+  z-index: 1002;
+}
+
+  #loader:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      right: 5px;
+      bottom: 5px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #e60f49;
+
+      -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+
+  #loader:after {
+      content: "";
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: #ffffff;
+
+      -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+        animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+  }
+
+  @-webkit-keyframes spin {
+      0%   { 
+          -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);  /* IE 9 */
+          transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+      100% {
+          -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);  /* IE 9 */
+          transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+  }
+  @keyframes spin {
+      0%   { 
+          -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(0deg);  /* IE 9 */
+          transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+      100% {
+          -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: rotate(360deg);  /* IE 9 */
+          transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+      }
+  }
+
+  #loader-wrapper .loader-section {
+      position: fixed;
+      top: 0;
+      width: 51%;
+      height: 100%;
+      background: var(--dark-primary);
+      z-index: 1001;
+      -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+      -ms-transform: translateX(0);  /* IE 9 */
+      transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+  }
+
+  #loader-wrapper .loader-section.section-left {
+      left: 0;
+  }
+
+  #loader-wrapper .loader-section.section-right {
+      right: 0;
+  }
+
+  /* Loaded */
+  .loaded #loader-wrapper .loader-section.section-left {
+      -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: translateX(-100%);  /* IE 9 */
+              transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+      -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+              transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  }
+
+  .loaded #loader-wrapper .loader-section.section-right {
+      -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: translateX(100%);  /* IE 9 */
+              transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);  
+      transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  }
+  
+  .loaded #loader {
+      opacity: 0;
+      -webkit-transition: all 0.3s ease-out;  
+              transition: all 0.3s ease-out;
+  }
+  .loaded #loader-wrapper {
+      visibility: hidden;
+
+      -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+          -ms-transform: translateY(-100%);  /* IE 9 */
+              transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+      -webkit-transition: all 0.3s 1s ease-out;  
+              transition: all 0.3s 1s ease-out;
+  }
+
+
+
+
+/*=========================================================================================================*/
+
+/* NAVBAR */
+#barraNav{
+  background-color: var(--primary);
+}
+.navbar .navbar-brand img{
+  margin-left: 1rem;
+  width: 40px;    
+
+}
+.navbar .navbar-brand span{
+  font-family: 'roboto';
+  color: #ffffff;
+  font-size: 16pt;
+      
+
+}
+
+#navbarSupportedContent .navbar-nav .nav-item a{
+  margin-left: 1rem;
+  font-family: 'roboto';
+  font-size: 12pt;
+}
+
+/* nombre de la clase para llamarla y se agrega "p" porque el cambio se hará solo en los parrafos */
+.texto_parrafo{
+  color: var(--light-primary);
+  font-family:'PawWowBlock-VGMDl';
+  display: block;
+  margin-left:50px ;
+  margin-right:50px ; 
+  font-size: 2vw;
+  text-align: justify;  /*justifica el texto en ambos extremos*/
+
+}
+/* caracteristicas del titulo */
+#logoPatitas{
+  display: flex;
+  justify-content: center;
+  margin-left:20px ;
+  margin-right:20px ; 
+  color :#9C27B0; 
+  font-family:'PawWowBlock-VGMDl';
+}
+
+#logoPatitas img{
+  margin-right: 7px;
+  margin-bottom: 3px;
+}
+
+#logoBookStop:hover{
+  filter: invert(42%) sepia(99%) saturate(2844%) hue-rotate(341deg) brightness(95%) contrast(91%);
+}
+
+.navbar{
+  -webkit-box-shadow:0px 2px 2px #dddddd;
+  -moz-box-shadow:0px 2px 2px #dddddd;
+  box-shadow:0px 2px 2px #dddddd;
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  transition: 0.3s;
+  width: 100%;
+  top: 0;
+}
+
+#carousel1{
+  position: relative;
+  z-index: 0;
+}
+
+/* normalizar tamaño fotos carrusel AGREGADA EN DIV*/
+.imgnormalizada img {
+  width: 250px;
+  height: 350px;
+  max-height: 350px;
+}
+
+
+.imgnormalizadafooter img {
+  width: 30px;
+  height: 30px;
+  max-height: 30px;
+}
+
+#userPatitas{
+  color: #3C92D8;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+#userBookStop:hover{
+  filter: invert(42%) sepia(99%) saturate(2844%) hue-rotate(341deg) brightness(95%) contrast(91%);
+}
+
+#userPatitas img{
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+
+#btnBuscar{
+  border-color: #e94f37; 
+  color: #e94f37;
+  margin-right: 20px;
+  margin-left: -5px;
+}
+
+#btnBuscar:hover{
+  background-color: #e94f37; 
+  color: #ffffff;
+}
+
+#btnRegistrarse{
+  border-color: #007BFF; 
+  color: #007BFF;
+}
+
+#btnRegistrarse:hover{
+  background-color: #0069D9; 
+  color: #ffffff;
+}
+
+#titLogo{
+  color: #3C92D8; 
+  margin-left: 7px;
+}
+
+#titLogo:hover{
+  filter: invert(42%) sepia(99%) saturate(2844%) hue-rotate(341deg) brightness(95%) contrast(91%);
+}
+
+/* Párrafo SOMOS*/
+#qSomos{
+  /* margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 0; */
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #9C27B0;
+  text-align: justify; 
+
+}
+
+
+
+
+#qSomos h1{
+  color: #7B1FA2;
+}
+
+#qSomos h2{
+  color: #9C27B0;
+}
+
+.card{
+  -webkit-box-shadow: 0px 0px 4px #c5c5c5;
+  -moz-box-shadow: 0px 0px 4px #c5c5c5;
+  box-shadow: 0px 0px 4px #c5c5c5;
+  border-radius: 7px;
+  margin-bottom: 20px;
+  text-align: justify;
+  padding: 5px;
+  color: #596272;
+}
+
+.card img{
+  width: 180px;
+}
+
+div>h4{
+  color: #212529;
+} 
+
+.newsletter{
+  background-color: #212529;
+  color: white;
+  padding-bottom: 5px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0px 0px 7px #c5c5c5;
+  -moz-box-shadow: 0px 0px 7px #c5c5c5;
+  box-shadow: 0px 0px 7px #818181;
+  align-items: center;
+  font-size: 18px;
+}
+
+#newsletter h2{
+  color: white;
+}
+
+#btnNewsletter{
+  background-color: #e94f37; 
+  border-color: #e94f37;
+}
+
+#btnNewsletter:hover{
+  background-color: #e23c22; 
+  border-color: #e23c22;
+}
+
+#top10{
+  background-color: #ffffff;
+  padding: 20px 20px 20px 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  -webkit-box-shadow: 0px 0px 4px #c5c5c5;
+  -moz-box-shadow: 0px 0px 4px #c5c5c5;
+  box-shadow: 0px 0px 4px #c5c5c5;
+  border-radius: 7px;
+  align-items: center;
+  color: #596272;
+}
+
+#top10 h3{
+  color: #212529;
+}
+
+#linkLibro{
+  color: #e94f37; 
+  text-decoration: none;
+}
+
+#linkLibro:hover{
+  color: #3C92D8; 
+}
+
+footer{
+  padding: 20px;
+  color: #c5c5c5;
+  background-color: #212529;
+  height: 280px;
+  margin-top: 20px;
+}
+
+footer div p{
+  font-size: 12px;
+  color: #888888;
+  padding-top: 5px;
+  line-height: 10px;
+}
+
+#linkFooter{
+  color: #c5c5c5;
+  text-decoration: none;
+}
+
+@media (max-width:991px){
+  header label{
+      display: block;
+  }
+  footer{
+    height: 500px;
+  }
+  .carousel-caption{
+    color: transparent;
+  }
+}   
+
+
+/*MONITOR DE TELEVISION*/
+@media screen and (min-width:1024px){
+  .navbar .navbar-brand img{
+    width: 4rem;
+        
+
+}
+#navbarSupportedContent .navbar-nav .nav-item a {
+    font-size: 18pt;
+    margin-left: 3rem;
+        
+
+}
+.navbar .navbar-brand span{
+    margin-left: -4.5rem;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 36pt;
+        
+
+}
+
+   
+  /* parrafo somos */
+  p { font-size: calc(1.6vw);
+      text-align:justify;
+      margin-left: 24%;
+      margin-right: 24%;
+      }
+
+  h1 { font-size: 300% 
+      }
+ 
+  section .card img{
+    width:250%;
+    max-width:400px;
+  }
+  /* pie de página */
+  footer{
+    height: 700px; 
+  }
+
+  /* QUIENES SOMOS */
+  .qSomos h2{
+    font-size: 30px;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: var(--dark-primary);
+  }
+  
+}
+
+
+
+/* igualar tamaño de imagenes */
+.card-img-top {
+  width: 80%;
+  height: 200px !important; 
+  /* esta es la parte importante para que todas tus card-img tengan la misma medida sin importar el tamaño de la imagen */
+  border-top-left-radius: calc(0.25rem - 1px); 
+  border-top-right-radius: calc(0.25rem - 1px);
+}
+
+
+/*MONITOR DE TABLET*/
+@media screen and (min-width:600px) and (max-width:1023px){
+  .container-head{
+      
+      text-align: center;
+      font-size: 12pt;
+      height: 2.5rem;
+      width: 100%;
+  }
+  .banner-top img{
+      width: 100%;
+  }
+  .navLogo-img{
+    width: 100%;
+}
+.navbar .navbar-brand span{
+    margin-left: -5rem;
+    font-family: 'InaptlyRegular-rgwxB';
+    color: #ffffff;
+    font-size: 20pt;
+        
+
+}
+
+  /* PARRAFO DE QUIENES SOMOS */
+  .qSomos p{
+    font-size: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+    /* SUBTITULO QUIENES SOMOS */
+  .qSomos h2{
+    color: var(--primary);
+    font-family: 'InaptlyRegular-rgwxB';
+    font-size: 25px;
+  }
+
+ 
+  .intro{
+      flex-flow: column-reverse;
+  }
+
+  .intro .image img{
+      width: 100%;
+  }
+
+  .intro .content h3{
+      font-size: 3.6rem;
+  }
+
+  .intro .content p{
+      font-size: 1.5rem;
+  }
+
+}
+@media(max-width:767px){
+
+  .container-head{
+      background-color: var(--accent);
+      text-align: justify;
+      font-size: 9pt;
+      height: 3.4rem;
+      width: 100%;
+  }
+  .navLogo-img{
+      width: 100%;
+  }
+  /* imagen top background */
+  .banner-top{
+      width: 100%;
+      height: 100vh;
+      
+  }
+  /* IMAGEN LOGO */
+  .banner-top .banner-icono img{
+      position: fixed;
+      
+  }
+  /* TITULO */
+  .banner-top .banner-titulo{
+
+      font-size: 70pt;
+      margin-top: 8rem;
+      color: var(--accent);
+      margin-left: -20rem;   
+  }
+
+  .intro{
+      flex-flow: column-reverse;
+  }
+
+  .intro .image img{
+      width: 100%;
+  }
+
+  .intro .content h3{
+      font-size: 2rem;
+  }
+
+  .intro .content p{
+      font-size: 1rem;
+  }
+
+  
+  /*NAVBAR TEXTO INICIO SESION*/
+  .nav-item .navbar-brand img{
+      height: auto;
+      width: 1.5rem;
+      margin-left: 4.3rem;
+  }
+  
+  /* tarjetas */
+  section .card {
+    scale: 70%;
+  }
+  
+    
+  .container-head .div video{
+    width:60%;
+    max-width:640px;
+    height: auto;
+
+  }
+
+  /* texto de tarjetas 1 y 2 */
+  .text-center .card-group .card p{
+    font-size: 20px;
+  }
+
+   /* texto de tarjetas 3 */
+   .text-center .card-group .cardp p{
+    font-size: 40px;
+   }
+}
+
+/* ========================================= */
+
+
+/*MONITOR DE celular*/
+@media screen and (min-width:360px) and (max-width:767px){
+  /* parrafo SOMOS */
+  /* p { font-size: calc(6vw);
+    text-align:center;
+    text-align: justify;
+    width: 50%;
+    margin-left: 25%;
+    /* margin-right: 15%; */
+    /* } */ 
+    .navLogo-img{
+      width: 100%;
+  }
+  .navbar .navbar-brand span{
+      margin-left: -1rem;
+      font-family: 'InaptlyRegular-rgwxB';
+      color: #ffffff;
+      font-size: 20pt;
+          
+  
+  }
+  .container-head .carousel-caption{
+    margin-left: 50%;
+    margin-right: 20%;
+  }
+
+  .div video{
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+  /* pie de página  */
+  footer{
+    height: 1000px; 
+  }
+
+   /* PARRAFO DE QUIENES SOMOS */
+   .qSomos p{
+    font-size: 20px;
+    text-align: justify;
+    margin-left: 15%;
+    margin-right: 15%;
+    
+  }
+    /* SUBTITULO QUIENES SOMOS */
+  .qSomos h2{
+    color: var(--primary);
+    font-family: 'InaptlyRegular-rgwxB';
+    font-size: 25px;
+   
+  }
+
+  /* texto de tarjetas 3 */
+  .card .cardp .card-text p{
+    font-size:50px ;
+   }
+
+}
